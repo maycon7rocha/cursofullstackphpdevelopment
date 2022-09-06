@@ -9,13 +9,13 @@ fullStackPHPClassName("03.05 - Manipulação de datas");
  */
 fullStackPHPClassSession("a função date", __LINE__);
 
-var_dump([
+vardump([
     date_default_timezone_get(),
     date(DATE_W3C),
 ]);
 echo ("<hr>");
 
-var_dump(getdate());
+vardump(getdate());
 
 echo "<p>Hoje é dia ", getdate()["mday"], "!</p>";
 /**
@@ -25,7 +25,7 @@ fullStackPHPClassSession("string to date", __LINE__);
 
 define("DATE_BR", "d/m/Y h:i:s");
 
-var_dump([
+vardump([
     "strtotime NOW" => strtotime("now"),
     "time" => time(),
     "strtotime+10d" => strtotime("+10days"),
@@ -37,3 +37,5 @@ var_dump([
 
 $format = "%d/%m/%Y %H horas e %M minutos";
 echo "<p>A data de hoje é ", strftime($format),"</p>";
+$date = new DateTime();
+echo "<p>A data de hoje é ", $date->format("d/m/Y"),"</p>";
