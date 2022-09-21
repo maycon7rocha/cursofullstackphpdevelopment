@@ -7,6 +7,13 @@ fullStackPHPClassName("03.08 - Gestão de diretórios");
  */
 fullStackPHPClassSession("verificar, criar e abrir", __LINE__);
 
+$folder = __DIR__ . "/uploads";
+if (!file_exists($folder) || !is_dir($folder)) {
+    # code...
+    mkdir($folder, 0755);
+} else {
+    vardump(scandir($folder));
+}
 
 /*
  * [ copiar e renomear ] copy | rename
@@ -14,7 +21,46 @@ fullStackPHPClassSession("verificar, criar e abrir", __LINE__);
 fullStackPHPClassSession("copiar e renomear", __LINE__);
 
 
+$file = __DIR__ . "/file.txt";
+vardump(__DIR__);
+
+vardump([
+    pathinfo($file),
+    scandir($folder),
+    scandir(__DIR__)
+]);
+
+if (!file_exists($file) || !is_dir($file)) {
+    fopen($file, "w");
+    vardump("aki");
+} else {
+    vardump([filemtime($file), filemtime(__DIR__."/uploads/file.txt")]);
+    copy($file, $folder . "/" . basename($file));
+    rename(__DIR__."/uploads/file.txt", __DIR__."/uploads/". time() . "." . pathinfo($file)["extension"]);
+}
+
 /*
  * [ remover e deletar ] unlink | rmdir
  */
 fullStackPHPClassSession("remover e deletar", __LINE__);
+
+// mkdir("remove", 0755);
+// rmdir(__DIR__ . "/remove");
+$dirRemove = __DIR__ . "/remove";
+$dirFiles = array_diff(scandir($dirRemove), [".", ".."]);
+$dirCount =  count($dirFiles);
+
+vardump([$dirRemove, $dirFiles, $dirCount]);
+
+if ($dirCount >= 1) {
+    echo "<h2>Clear...</h2>";
+    foreach (scandir($dirRemove) as $fileItem) {
+        $fileItem = __DIR__ . "/remove/{$fileItem}";
+        if(file_exists($fileItem) && is_file($fileItem)) {
+            vardump($fileItem);
+            unlink($fileItem);
+        }
+    }
+} else {
+    rmdir($dirRemove);
+}
