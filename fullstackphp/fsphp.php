@@ -68,6 +68,11 @@ function fullStackPHPErrorHandler($error, $message, $file, $line)
 
 function vardump($variavel){
     echo "<pre>";
+    $backtrace = debug_backtrace();
+    $line = $backtrace[0]['line'];
+    $file = $backtrace[0]['file'];
+    echo "Arquivo: " . $file . "<br>Linha: $line <br>";
+    echo __LINE__;
     var_dump($variavel);
     echo "</pre>";
 }
