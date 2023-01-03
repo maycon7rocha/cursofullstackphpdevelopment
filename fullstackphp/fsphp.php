@@ -72,7 +72,7 @@ function vardump($variavel){
     $line = $backtrace[0]['line'];
     $file = $backtrace[0]['file'];
     echo "Arquivo: " . $file . "<br>Linha: $line <br>";
-    echo __LINE__;
+    // echo __LINE__;
     var_dump($variavel);
     echo "</pre>";
 }
