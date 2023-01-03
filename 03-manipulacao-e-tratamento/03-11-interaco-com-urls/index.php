@@ -13,3 +13,6 @@ fullStackPHPClassSession("argumentos", __LINE__);
  * [ filter list ] https://php.net/manual/en/filter.filters.php
  */
 fullStackPHPClassSession("segurança", __LINE__);
+
+
+// VISTO 03/01/23

@@ -12,3 +12,6 @@ fullStackPHPClassSession("cookies", __LINE__);
  * [ sessões ] http://php.net/manual/pt_BR/ref.session.php
  */
 fullStackPHPClassSession("sessões", __LINE__);
+
+
+// VISTO 03/01/23
