@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\override;
+
 require __DIR__ . '/../../fullstackphp/fsphp.php';
 fullStackPHPClassName("04.08 - Herança e polimorfismo");
 
@@ -23,3 +26,4 @@ fullStackPHPClassSession("classe filha", __LINE__);
  */
 fullStackPHPClassSession("polimorfismo", __LINE__);
 
+// visto 09/01/23
