@@ -11,6 +11,27 @@ require __DIR__ . "/source/autoload.php";
  * inacessível = propridade é privada ou não existe
  */
 fullStackPHPClassSession("__set", __LINE__);
+// $_POST['acao'] = '';
+// vardump($_POST['acao']);
+
+if(isset($_POST['acao'])){
+    echo "acao existe.";
+    if($_POST['acao'] != ""){
+        echo ' diferente de vazio.';
+    }else echo ' vazio.';
+}else{
+    echo ' nao existe.';
+}
+echo '<hr>';
+
+if(!empty($_POST['acao'])){
+    echo " acao existe.";
+    if($_POST['acao'] != ""){
+        echo ' diferente de vazio.';
+    }else echo ' vazio.';
+}else{
+    echo ' nao existe.';
+}
 
 
 /*
@@ -48,3 +69,6 @@ fullStackPHPClassSession("__toString", __LINE__);
  * http://php.net/manual/pt_BR/language.oop5.overloading.php#object.unset
  */
 fullStackPHPClassSession("__unset", __LINE__);
+
+
+//feito 09/01/23
